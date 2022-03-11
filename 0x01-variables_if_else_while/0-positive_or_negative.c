@@ -2,15 +2,17 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main(void)
-{
 /**
  * hello betty
  */
+int main(void)
+{
+
 	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+    /* rand funtion to get random number */
 	if (n == 0)
 	{
 		printf("%d is zero\n", n);
