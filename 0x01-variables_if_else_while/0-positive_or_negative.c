@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+/**
+ * hello betty
+ */
 int main(void)
 {
 	int n;
