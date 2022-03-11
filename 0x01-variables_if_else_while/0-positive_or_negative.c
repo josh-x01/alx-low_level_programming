@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+int main(void)
+{
 /**
  * hello betty
  */
-int main(void)
-{
 	int n;
 
 	srand(time(0));
