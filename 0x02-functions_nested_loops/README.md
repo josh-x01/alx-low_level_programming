@@ -1,0 +1,1 @@
+In this project we going to discuss about function and loops
