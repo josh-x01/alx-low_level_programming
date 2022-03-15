@@ -1,22 +1,25 @@
-#include <stdio.h>
-/**
- * main - fabonachi
- * @void: null
- * Return: Always 0.
- */
 int main(void)
 {
-	unsigned long int num1 = 1, num2 = 2, count = 0, sum;
+ int counter = 2;
 
-	printf("%li, %li", num1, num2);
-	while (count < 94)
-	{
-		sum = num1 + num2;
-		printf(", %lu", sum);
-		num1 = num2;
-		num2 = sum;
-		count++;
-	}
-	putchar('\n');
-	return (0);
+ float a = 1;
+ float b = a + 1;
+ float c = a + b;
+
+ printf("%.0f, ", a);
+ printf("%.0f, ", b);
+ while (counter < 98)
+ {
+  counter++;
+  printf("%.0f", c);
+  a = b;
+  b = c;
+  c = a + b;
+  if (counter < 98)
+  {
+   printf(", ");
+  }
+ }
+ printf("\n");
+ return (0);
 }
