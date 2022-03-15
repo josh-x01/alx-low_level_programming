@@ -6,17 +6,13 @@
  */
 int main(void)
 {
-	long int num1 = 1, num2 = 2, count = 0, sum;
+	unsigned long int num1 = 1, num2 = 2, count = 0, sum;
 
 	printf("%li, %li", num1, num2);
 	while (count < 96)
 	{
 		sum = num1 + num2;
-		if (sum < 0)
-		{
-			sum = -sum;
-		}
-		printf(", %li", sum);
+		printf(", %lu", sum);
 		num1 = num2;
 		num2 = sum;
 		count++;
