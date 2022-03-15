@@ -1,24 +1,8 @@
-#include <stdio.h>
+#ifndef MAIN_H
+#define MAIN_H
 
-void print_alphabet(void)
-{
-	int stop = 122, count = 97;
+int _putchar(char c);
+void print_alphabet(void);
+void print_alphabet_x10(void);
 
-	while (count <= stop)
-	{
-		putchar(count);
-		count++;
-	}
-	printf("\n");
-}
-
-void print_alphabet_x10(void)
-{
-	int i = 0;
-
-	while (i < 10)
-	{
-		print_alphabet();
-		i++;
-	}
-}
+#endif
