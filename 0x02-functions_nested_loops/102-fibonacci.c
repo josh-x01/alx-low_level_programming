@@ -13,7 +13,7 @@ int main(void)
 	{
 		sum = num1 + num2;
 
-		printf(" ,%li", sum);
+		printf(", %li", sum);
 		num1 = num2;
 		num2 = sum;
 		count++;
