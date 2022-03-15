@@ -6,7 +6,7 @@
  * Return: null.
  */
 
-void print_alphabet()
+void print_alphabet(void)
 {
 	int stop = 122, count = 97;
 
@@ -16,15 +16,4 @@ void print_alphabet()
 		count++;
 	}
 	_putchar('\n');
-}
-
-/**
- * main - check the code
- *
- * Return: Always 0.
-*/
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
