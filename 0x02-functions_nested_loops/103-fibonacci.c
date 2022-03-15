@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	long int num1 = 1, num2 = 2, count = 0, sum, total = 1;
+	long int num1 = 1, num2 = 2, count = 0, sum = 0, total = 1;
 
-	while (count < 8)
+	while (sum < 4000000)
 	{
 		sum = num1 + num2;
 		num1 = num2;
