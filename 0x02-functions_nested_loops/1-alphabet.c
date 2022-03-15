@@ -6,7 +6,7 @@
  * Return: null.
  */
 
-void print_alphabet(void)
+void print_alphabet()
 {
 	int stop = 122, count = 97;
 
