@@ -2,4 +2,4 @@
 git add --chmod=+x *
 git add .
 git commit -m "this is project 0x01"
-git push
+git push origin master
