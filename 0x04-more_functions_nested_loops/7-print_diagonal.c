@@ -3,25 +3,24 @@
  * print_diagonal - print a diagonal line
  * @n: length of diagonal
  */
+
 void print_diagonal(int n)
 {
-	int space = 0, i;
+	int i, j;
 
 	if (n > 0)
 	{
-		while (n > 0)
+		for (i = 0; i < n; i++)
 		{
-		for (i = 0; i < space; ++i)
-		{
-			_putchar(' ');
-		}
+			for (j = 0; j < i; j++)
+			{
+				_putchar(' ');
+			}
 		_putchar('\\');
-		n--;
-		space++;
 		_putchar('\n');
 		}
 	}
-	else
+	else if (n <= 0)
 	{
 		_putchar('\n');
 	}
