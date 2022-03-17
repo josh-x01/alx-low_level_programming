@@ -18,4 +18,5 @@ void print_diagonal(int n)
 		space++;
 		_putchar('\n');
 	}
+	_putchar('\n');
 }
