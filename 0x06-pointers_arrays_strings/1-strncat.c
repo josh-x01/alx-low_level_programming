@@ -26,15 +26,10 @@ char *_strncat(char *dest, char *src, int n)
 {
 	int ns = size(dest), i;
 
-	for (i = 0; i < n && src[i] != src[n]; i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
-		if (src[i] == '\0')
-		{
-			break;
-		}
 		dest[ns + i] = src[i];
 	}
-	dest[ns + i] = src[n];
 
 	return (dest);
 }
