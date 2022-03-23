@@ -1,37 +1,26 @@
 #include "main.h"
 
 /**
- * *leet - check the code for Holberton School students.
- *
- * @str: string.
- * Return: string.
+ * leet - encode
+ * @s: pointer to char params
+ * Return: *s
  */
-char *leet(char *str)
+
+char *leet(char *s)
 {
 	int i;
+	int j;
+	char l[] = "ol_ea__t";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		for (j = 0; l[j] != '\0'; j++)
 		{
-			str[i] = '4';
-		}
-		else if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = '3';
-		}
-		else if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = '0';
-		}
-		else if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = '7';
-		}
-		else if (str[i] == 'l' || str[i] == 'L')
-		{
-			str[i] = '1';
+			if (s[i] == l[j] || s[i] == (l[j] - 32))
+			{
+				s[i] = j + '0';
+			}
 		}
 	}
-	return (str);
+	return (s);
 }

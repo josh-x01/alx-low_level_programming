@@ -1,33 +1,35 @@
 #include "main.h"
-
 /**
- * _strncat - two words
- * @dest : pointer to char param
- * @src : pointer to char param
- * @n : int parameter
- * Return: *dest
+ * size - find the size of the array
+ * @str: the array
+ * Return: the size of array
  */
+int size(char *str)
+{
+	char str_size = str[0];
+	int n = 1;
 
+	while (str_size != '\0')
+	{
+		str_size = str[n];
+		n++;
+	}
+	return (n - 1);
+}
+/**
+ * _strcat - concatinate src on dest
+ * @dest: the first array
+ * @src: the second array
+ * Return: dest + src
+ */
 char *_strncat(char *dest, char *src, int n)
 {
-	int m;
-	int i;
+	int ns = size(dest), i;
 
-	m = 0;
-
-	for (i = 0; i < 1000; i++)
+	for (i = 0; i < n && src[i] != '\0'; i++)
 	{
-		if (dest[i] == '\0')
-		{
-			break;
-		}
-		m++;
+		dest[ns + i] = src[i];
 	}
-
-	for (i = 0; src[i] != '\0' && i < n; i++)
-	{
-		dest[m + i] = src[i];
-	}
-	dest[m + i] = '\0';
+    dest[ns + i] = '\0';
 	return (dest);
 }
