@@ -30,6 +30,6 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		dest[ns + i] = src[i];
 	}
-
+    dest[ns + i] = '\0';
 	return (dest);
 }
