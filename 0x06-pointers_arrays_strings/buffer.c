@@ -1,17 +1,23 @@
 #include "main.h"
 
-/**
- * infinite add - add two numbers
- * @n1: first number
- * @n2: second number
- * @r: buffer for result
- * @size_r: buffer size
- * Return: address of r or 0
- */
-
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+int main(void)
 {
-	int i, j, k, l, m, n;
+	int n;
+	int a[5];
+	int *p;
 
-	for (i = 0; n1[i]; i++)
-		;
+	a[2] = 1024;
+	p = &n;
+	/**
+	 * write your line of code here...
+	 * Remember:
+	 * - you are not allowed to use a
+	 * - you are not allowed to modidy p
+	 * - only one statement
+	 * - you are not allowed to code anything else than this line ofe code
+	 */
+	*(p + 5) = 98;
+	/* ...so that this prints 98\n */
+	printf("a[2] = %d\n", a[2]);
+	return (0);
+}
