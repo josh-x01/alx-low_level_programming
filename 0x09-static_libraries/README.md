@@ -1,1 +1,1 @@
-static library
+ALX static lib
