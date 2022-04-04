@@ -23,13 +23,16 @@ int countStr(char *str)
  */
 char *_strdup(char *str)
 {
+	int size;
+	char *word;
+
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	int size = countStr(str);
-	char *word = malloc(size);
+	size = countStr(str);
+	word = malloc(size);
 
 	if (word == NULL)
 	{
