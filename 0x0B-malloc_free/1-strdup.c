@@ -25,7 +25,7 @@ char *_strdup(char *str)
 {
 	int size = countStr(str);
 
-	if (size == 0)
+	if (str == 0)
 	{
 		return (NULL);
 	}
