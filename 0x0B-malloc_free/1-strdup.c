@@ -26,7 +26,7 @@ char *_strdup(char *str)
 	int size = countStr(str);
 	char *word = malloc(size);
 
-	if (str == 0)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
