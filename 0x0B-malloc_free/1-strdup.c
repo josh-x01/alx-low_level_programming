@@ -34,7 +34,7 @@ char *_strdup(char *str)
 	size = countStr(str);
 	word = malloc(size);
 
-	if (word == NULL)
+	if (word == 0)
 	{
 		return (NULL);
 	}
