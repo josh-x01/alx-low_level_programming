@@ -1,46 +1,33 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
-/**
- * countStr - counts the number of char
- * @str: the string to be counted
- * Return: the size of string
- */
-int countStr(char *str)
-{
-	int size = 0;
+#include <stdio.h>
 
-	while (*str++ != '\0')
-	{
-		size++;
-	}
-	return (size);
-}
 /**
- * _strdup - deplicate the str
- * @str: str to be duplicated
- * Return: the new string
+ *_strdup - returns a pointer to a newly allocated space in memory
+ *	which contains a copy of the string given as a parameter.
+ * @str: string
+ * Return: 0
  */
+
 char *_strdup(char *str)
 {
-	int size;
-	char *word;
+	int i = 0, size = 0;
+	char *m;
 
 	if (str == NULL)
-	{
 		return (NULL);
-	}
 
-	size = countStr(str);
-	word = malloc(size);
+	for (; str[size] != '\0'; size++)
+		;
 
-	if (size == 0)
-	{
+	/*+1 on the size puts the end of string character*/
+	m = malloc(size * sizeof(*str) + 1);
+
+	if (m == 0)
 		return (NULL);
-	}
-	while (size--)
 	{
-		word[size] = str[size];
+		for (; i < size; i++)
+			m[i] = str[i];
 	}
-	return (word);
+	return (m);
 }
