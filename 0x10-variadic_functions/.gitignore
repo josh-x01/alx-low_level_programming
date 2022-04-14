@@ -1,3 +1,5 @@
 git
 main.c
+*.swp
+*.swo
 _putchar.c
