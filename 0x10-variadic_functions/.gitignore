@@ -3,3 +3,4 @@ main.c
 *.swp
 *.swo
 _putchar.c
+variadic_function.h

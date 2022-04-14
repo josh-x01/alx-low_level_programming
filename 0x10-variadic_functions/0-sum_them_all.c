@@ -1,5 +1,3 @@
-#include "main.h"
-#include "variadic_function.h"
 #include "stdarg.h"
 /**
  * sum_them_all - it sum up all passed arguments
