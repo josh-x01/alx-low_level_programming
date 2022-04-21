@@ -3,11 +3,11 @@
 /**
  * print_list - print linked list data
  * @h: the head of the node
- * Retrun: return the number of node
+ * Return: return the number of node
  */
 size_t print_list(const list_t *h)
 {
-	size_t numberOfNode = 0;
+	int numberOfNode = 0;
 
 	while (h != NULL)
 	{
@@ -19,7 +19,7 @@ size_t print_list(const list_t *h)
 		}
 		else
 		{
-			printf("[%u] %s\n", h->len, h->str);
+			printf("[%i] %s\n", h->len, h->str);
 			numberOfNode++;
 			h = h->next;
 		}
