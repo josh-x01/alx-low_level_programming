@@ -1,0 +1,5 @@
+sudo dos2unix *
+sudo chmod u+x *
+sudo git add .
+sudo git commit -m "single linked list"
+sudo push
