@@ -1,3 +1,5 @@
+
+  
 #include "lists.h"
 
 /**
@@ -6,6 +8,7 @@
  *
  * Return: number of nodes in the list
  */
+
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t num = 0;
@@ -27,3 +30,4 @@ size_t print_listint_safe(const listint_t *head)
 
 	return (num);
 }
+
