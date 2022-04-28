@@ -43,7 +43,8 @@ int _pow(int i)
 
 unsigned int binary_to_uint(const char *b)
 {
-	int size = len(b), i, num = 0;
+	int size = len(b), i;
+  unsigned int num = 0;
 	const char *bit = b;
 
 	for (i = size - 1; i >= 0; i--)
@@ -56,4 +57,3 @@ unsigned int binary_to_uint(const char *b)
 	}
 	return (num);
 }
-
