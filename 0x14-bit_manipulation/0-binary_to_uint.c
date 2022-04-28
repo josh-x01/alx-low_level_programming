@@ -1,59 +1,53 @@
 #include "main.h"
 
 /**
- * len - length of str
- * @ptr: first char
- * Return: size of str
+ * _stoi - converts chars to ints
+ * @c: char to convert
+ * Return: converted int
  */
 
-int len(const char *ptr)
+unsigned int _stoi(char c)
 {
-	int size = 0;
-
-	while (*ptr != '\0')
-	{
-		size++;
-		ptr++;
-	}
-	return (size);
-}
-/**
- * _pow - compute 2 ** i
- * @i: race
- * Return: the calulated product
- */
-
-int _pow(int i)
-{
-	int product = 1;
-
-	while (i > 0)
-	{
-		product *= 2;
-		i--;
-	}
-	return (product);
+	return ((unsigned int) c - '0');
 }
 
 /**
- * binary_to_uint - change bianry to base10
- * @b: first char
- * Return: the base10 value
+ * _strlen - calculates the length of the string
+ * @s: input
+ * Return: length of string
+ */
+
+unsigned int _strlen(const char *s)
+{
+	unsigned int i;
+
+	for (i = 0; s[i]; i++)
+		;
+	return (i);
+}
+
+/**
+ * binary_to_uint - converts a string of 1's and 0's to a decimal number
+ * @b: string to convert
+ * Return: unsigned decimal number
  */
 
 unsigned int binary_to_uint(const char *b)
 {
-	int size = len(b), i;
-	unsigned int num = 0;
-	const char *bit = b;
+	int i;
+	unsigned int result, tmp, expo;
 
-	for (i = size - 1; i >= 0; i--)
+	if (!b)
+		return (0);
+	result = tmp = 0;
+	expo = 1;
+	for (i = _strlen(b) - 1; b[i]; i--, expo *= 2)
 	{
-		if (!(*bit == '1' || *bit == '0'))
+		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		if (*bit == '1')
-			num += _pow(i);
-		bit++;
+		tmp = _stoi(b[i]);
+		result += tmp * expo;
 	}
-	return (num);
+	return (result);
 }
+
