@@ -1,41 +1,52 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - delete a node in a given key
- * @head: linked list head
- * @index: key to delte
- * Return: 1 on success
+ * delete_dnodeint_at_index - deletes the node at index of a
+ * dlistint_t linked list
+ *
+ * @head: head of the list
+ * @index: index of the new node
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *delete;
-	dlistint_t *tmp;
-	unsigned int compare = 0;
+	dlistint_t *h1;
+	dlistint_t *h2;
+	unsigned int i;
 
-	if (head == NULL)
-		return (-1);
-	tmp = *head;
+	h1 = *head;
 
-	while (tmp != NULL)
+	if (h1 != NULL)
+		while (h1->prev != NULL)
+			h1 = h1->prev;
+
+	i = 0;
+
+	while (h1 != NULL)
 	{
-		if (index == 0)
+		if (i == index)
 		{
-			delete = tmp;
-			*head = tmp->next;
-			if (tmp->next)
-				tmp->next->prev = NULL;
-			free(delete);
+			if (i == 0)
+			{
+				*head = h1->next;
+				if (*head != NULL)
+					(*head)->prev = NULL;
+			}
+			else
+			{
+				h2->next = h1->next;
+
+				if (h1->next != NULL)
+					h1->next->prev = h2;
+			}
+
+			free(h1);
 			return (1);
 		}
-		else if ((compare + 1) == index)
-		{
-			delete = tmp->next;
-			tmp->next = (tmp->next)->next;
-			tmp->prev = (tmp->next)->prev;
-			free(delete);
-			return (1);
-		} compare++;
-		tmp = tmp->next;
+		h2 = h1;
+		h1 = h1->next;
+		i++;
 	}
+
 	return (-1);
 }
