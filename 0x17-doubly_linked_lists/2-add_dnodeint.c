@@ -2,7 +2,7 @@
 
 /**
  * add_dnodeint - add new node at the beginning
- * @*head: the head of the linked list
+ * @head: the head of the linked list
  * @n: new number to be add
  * Return: the address of new node
  */
@@ -25,5 +25,5 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (*head != NULL)
 		(*head)->prev = new_node;
 	*head = new_node;
-	return (new_node);	
+	return (new_node);
 }
