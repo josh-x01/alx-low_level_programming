@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc *.o -fPIC -shared -o libruin.so
+wget /tmp 
 LD_PRELOAD=$PWD/libruin.so
