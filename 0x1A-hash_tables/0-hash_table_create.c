@@ -1,3 +1,11 @@
+#include "hash_table.h"
+
+/**
+ * hash_table_t - create hash with the given size
+ * @size: the size of the array
+ * Return: the new hash_table
+ */
+
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	if (size == 0)
