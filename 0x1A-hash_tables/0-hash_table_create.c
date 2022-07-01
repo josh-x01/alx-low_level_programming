@@ -19,9 +19,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	temp->size = size;
-	temp->array = calloc((size_t)temp->size, sizeof(hash_node_t));
+	temp->array = malloc(size * sizeof(hash_noce_t *));
 
 	if (temp->array == NULL)
 		return (NULL);
+	memset(temp->array, 0, size * sizeof(hash_node_t *))
 	return (temp);
 }
