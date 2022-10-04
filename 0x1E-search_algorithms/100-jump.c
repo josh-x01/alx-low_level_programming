@@ -9,8 +9,21 @@
  * Return: index if found, -1 if sth went wrong
 */
 
-int linear_search(int *array, size_t size, int value)
+int jump_search(int *array, size_t size, int value)
 {
+	int a =  0, b = floor(sqrt(size)); 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	size_t index = size - 1;
 	int *ptr = array;
 
