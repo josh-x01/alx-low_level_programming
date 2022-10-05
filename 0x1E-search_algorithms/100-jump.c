@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * linear_search - search value in the given array
+ * jump_search - search value in the given array
  * @array: array contain numbers
  * @size: the size of the array
  * @value: the value to search
@@ -12,8 +12,9 @@
 int jump_search(int *array, size_t size, int value)
 {
 	int l = 0, j = sqrt(size);
-	int h = j;	
-	while ( array[min(h, size) - 1] < value)
+	int h = j;
+
+	while (array[min(h, size) - 1] < value)
 	{
 		printf("Value checked array[%i] = [%i]", l, array[l]);
 		l = h;
