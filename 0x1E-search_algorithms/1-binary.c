@@ -1,71 +1,48 @@
 #include "search_algos.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+
 
 /**
- * binary_search - searches for a value in an array of
- * integers using the Binary search algorithm
- * @array: array to search the value in
- * @size: size of the array
- * @value: value to look for
+ * search_result - display the range of binary search
+ * @l: the first index for display
+ * @r: the last index for display
+ * @array: the array to display
+*/
+
+void search_result(int *array, int l, int r)
+{
+	printf("Searching in array: ");
+	for (; l < r; l++)
+		printf("%i, ", array[l]);
+	printf("%i\n", array[r]);
+}
+
+/**
+ * binary_search - search value in the given array using binary algo
+ * @array: array contain numbers
+ * @size: the size of the array
+ * @value: the value to search
  *
- * Return: the index of the found value,
- * or -1 if not found
- */
+ * Return: index if found, -1 if sth went wrong
+*/
+
 int binary_search(int *array, size_t size, int value)
 {
-	if (!array || size == 0)
+	size_t l = 0, r = size - 1;
+	int m;
+
+	if (!array || !size)
 		return (-1);
 
-	return (help_binary(array, value, 0, size - 1));
-}
-
-/**
- * help_binary - searches for a value in an array of
- * integers using recursion
- * @array: array to search the value in
- * @value: value to look for
- * @lo: index of the low bound
- * @hi: index of the high bound
- *
- * Return: the index of the found value,
- * or -1 if not found
- */
-int help_binary(int *array, int value, size_t lo, size_t hi)
-{
-	size_t mid;
-
-	array_print(array, lo, hi);
-	if (hi == lo && array[lo] != value)
-		return (-1);
-
-	mid = ((hi - lo) / 2) + lo;
-	if (array[mid] == value)
-		return (mid);
-	if (array[mid] < value)
-		return (help_binary(array, value, mid + 1, hi));
-	if (array[mid] > value)
-		return (help_binary(array, value, lo, mid - 1));
-	return (-1);
-}
-
-/**
- * array_print - prints an array
- * @array: array to print
- * @lo: index of the low bound
- * @hi: index of the high bound
- */
-void array_print(int *array, size_t lo, size_t hi)
-{
-	size_t i;
-
-	printf("Searching in array: ");
-	for (i = lo; i <= hi; i++)
+	while (l <= r)
 	{
-		printf("%d", array[i]);
-		if (i < hi)
-			printf(", ");
+		search_result(array, l, r);
+		m = (r + l) / 2;
+		if (array[m] < value)
+			l = m + 1;
+		else if (array[m] > value)
+			r = m - 1;
+		else
+			return (m);
 	}
-	printf("\n");
+	return (-1);
 }
