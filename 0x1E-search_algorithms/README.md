@@ -1,1 +1,1 @@
-searching algo
+search algo

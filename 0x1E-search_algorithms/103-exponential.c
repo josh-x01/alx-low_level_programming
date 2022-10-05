@@ -1,11 +1,8 @@
 #include "search_algos.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 /**
- * binary_search - searches for a value in an array of
- * integers using the Binary search algorithm
+ * exponential_search - searches for a value in an array with
+ * the exponential search algorithm
  * @array: array to search the value in
  * @size: size of the array
  * @value: value to look for
@@ -13,12 +10,26 @@
  * Return: the index of the found value,
  * or -1 if not found
  */
-int binary_search(int *array, size_t size, int value)
+int exponential_search(int *array, size_t size, int value)
 {
+	size_t start, end, x;
+
 	if (!array || size == 0)
 		return (-1);
 
-	return (help_binary(array, value, 0, size - 1));
+	end = 1;
+	start = 1;
+	while (end < size)
+	{
+		if (value < array[end])
+			break;
+		printf("Value checked array[%lu] = [%d]\n", end, array[end]);
+		start = end;
+		end = end * 2;
+	}
+	x = end < size - 1 ? end : size - 1;
+	printf("Value found between indexes [%lu] and [%lu]\n", start, x);
+	return (help_binary(array, value, end / 2, x));
 }
 
 /**
@@ -43,10 +54,10 @@ int help_binary(int *array, int value, size_t lo, size_t hi)
 	mid = ((hi - lo) / 2) + lo;
 	if (array[mid] == value)
 		return (mid);
-	if (array[mid] < value)
-		return (help_binary(array, value, mid + 1, hi));
 	if (array[mid] > value)
 		return (help_binary(array, value, lo, mid - 1));
+	if (array[mid] < value)
+		return (help_binary(array, value, mid + 1, hi));
 	return (-1);
 }
 
